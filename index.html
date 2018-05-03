@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INTRANET</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="./nivo-slider.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <style>
+    /*media screen*/
+    .nivo-controlNav {
+        text-align: center;
+        padding: 15px 0;
+        position: absolute;
+        z-index: 999;
+        bottom: 16px;
+        left: 3%;
+    }
+    /*media screen*/
+    .nivo-controlNav a {
+        content: " \25CF";
+        font-size: 10px;
+        color: #fff;
+        padding: 1px 5px;
+        border-radius: 100%;
+        background-color: #000;
+        margin-left: 5px;
+        text-decoration: none;
+        opacity: 0.2;
+        }
+    /*media screen*/
+    .nivo-controlNav a.active {
+        opacity: 1;
+    }    
+    .global-nav {
+        background-color: #555;
+    }
+    .global-nav .nav-link {
+        color: white;
+    }
+    .banner {
+        position: relative;
+    }
+    .banner__bgslider {
+        position: relative;
+        height: 350px;
+        overflow: hidden;
+    }
+    .banner__content {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+
+    }
+    .banner__logo {
+        display: inline-block;
+        width: 200px;
+    }
+    .banner_logo__img {
+        width: 100%;
+    }
+    .site-nav {
+        background-color: white;
+        color: black;
+        margin-top: 1em;
+        border-radius: 5px;
+    }
+    .principalnews {
+        margin: 1em 0;
+    }
+    .principalnews__item {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .principalnews__item__image {
+        width: 100%;
+    }
+    .principalnews__item__title {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #444;
+        background-color: rgba(20,20,20,0.8);
+        color: white;
+        padding: 1em;
+    }
+    .carousel {
+        margin-top: 1em;
+        width: 100%;
+        max-width: 400px;
+        height: 150px;
+        background-color: #444;
+        background-color: rgba(20,20,20,0.8);
+        color: yellow;
+    }
+    .carousel-item {
+        padding: 1em;
+    }
+    .carousel span {
+        font-size: 2em;
+        font-weight: bold;
+    }
+    .othernews__item__picture {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .othernews__item__picture__image {
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="global-nav nav nav-fill">
+            <a href="" class="nav-item nav-link">Inicio</a>
+            <a href="" class="nav-item nav-link">RH</a>
+            <a href="" class="nav-item nav-link">Proyectos</a>
+            <a href="" class="nav-item nav-link">Juridico</a>
+            <a href="" class="nav-item nav-link">Abastecimientos</a>
+        </nav>
+        <div class="banner row no-gutters">
+            <div class="col-12">
+                <div class="banner__bgslider">
+                    <div id="slider" class="nivoSlider"> 
+                        <img src="./banner01.jpg" alt=""/>
+                        <img src="./banner02.jpg" alt=""/>
+                        <img src="./banner03.jpg" alt=""/>
+                    </div>
+                </div>
+                <div class="banner__content">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-8">
+                            <div class="row no-gutters justify-content-between  ">
+                                <div class="col-sm-4">
+                                    <div class="banner__logo">
+                                        <img src="./logo.png" alt="" class="banner_logo__img">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 text-right">
+                                    <input class="banner__search align-middle" type="text" placeholder="buscar en este sitio" />
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    <ul class="site-nav nav nav-pills nav-fill">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="">Link 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Link 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Link 3</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Link 4</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Link 5</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-sm-12">
+                                    <div class="carousel slide" data-ride="carousel" data-interval="3000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active"><span>Slide - 1</span></div>
+                                            <div class="carousel-item"><span>Slide - 2</span></div>
+                                            <div class="carousel-item"><span>Slide - 3</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="metallorum row no-gutters justify-content-center">
+        <div class="col-xs-12 col-md-9">
+            <div class="principalnews row">
+                <div class="col-md-4">
+                    <div class="principalnews__item">
+                        <img src="./Image.png" alt="" class="principalnews__item__image">
+                        <div class="principalnews__item__title">
+                            <span>Titulo de Noticia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="principalnews__item">
+                        <img src="./Image.png" alt="" class="principalnews__item__image">
+                        <div class="principalnews__item__title">
+                            <span>Titulo de Noticia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="principalnews__item">
+                        <img src="./Image.png" alt="" class="principalnews__item__image">
+                        <div class="principalnews__item__title">
+                            <span>Titulo de Noticia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                <div class="twitter col-md-3">
+                    <h3>Twitter</h3>
+                    <a class="twitter-timeline"  href="https://twitter.com/search?q=from%3A%40mashable%20OR%20from%3A%40newegg" data-height="600px" data-theme="dark" data-widget-id="991718003787096065">Tweets sobre from:@mashable OR from:@newegg</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+                <div class="col-md-3">
+                    <h3>Noticias</h3>
+                    <div class="othernews">
+                        <div class="othernews__item row no-gutters">
+                            <div class="col-sm-4">
+                                <div class="othernews__item__picture">
+                                    <img src="./Image.png" alt="" class="othernews__item__picture__image">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4 class="othernews__item__title">
+                                    Otra Noticia
+                                </h4>
+                                <p class="othernews__item__description">
+                                    Descripción breve de la noticia
+                                </p>
+                            </div>
+                        </div>
+                        <div class="othernews__item row no-gutters">
+                            <div class="col-sm-4">
+                                <div class="othernews__item__picture">
+                                    <img src="./Image.png" alt="" class="othernews__item__picture__image">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4 class="othernews__item__title">
+                                    Otra Noticia
+                                </h4>
+                                <p class="othernews__item__description">
+                                    Descripción breve de la noticia
+                                </p>
+                            </div>
+                        </div>
+                        <div class="othernews__item row no-gutters">
+                            <div class="col-sm-4">
+                                <div class="othernews__item__picture">
+                                    <img src="./Image.png" alt="" class="othernews__item__picture__image">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4 class="othernews__item__title">
+                                    Otra Noticia
+                                </h4>
+                                <p class="othernews__item__description">
+                                    Descripción breve de la noticia
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3>Indicadores</h3>
+                    <script type="text/javascript" src="https://www.goldpriceoz.com/goldwidget.php?m=000000&g=FFFFFF&c=717375&i=FFFFFF&l=DDDDDD&o=ECEAEA&w=255"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./jquery.nivo.slider.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#slider').nivoSlider({
+                directionNav: false,
+                effect:"sliceDownRight"
+            });
+        });
+    </script> 
+</body>
+</html>
