@@ -23,11 +23,14 @@
     /*media screen*/
     .nivo-controlNav a {
         content: " \25CF";
-        font-size: 10px;
+        font-size: 0px;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
         color: #fff;
         padding: 1px 5px;
         border-radius: 100%;
-        background-color: #000;
+        background-color: yellow;
         margin-left: 5px;
         text-decoration: none;
         opacity: 0.2;
@@ -78,6 +81,7 @@
         width: 100%;
         margin: 0 auto;
         position: relative;
+        min-height: 300px;
     }
     .principalnews__item__image {
         width: 100%;
@@ -87,9 +91,10 @@
         bottom: 0;
         width: 100%;
         background-color: #444;
-        background-color: rgba(20,20,20,0.8);
+        /*background-color: rgba(20,20,20,0.8);*/
         color: white;
         padding: 1em;
+        min-height: 43%;
     }
     .carousel {
         margin-top: 1em;
@@ -132,6 +137,7 @@
                         <img src="./banner01.jpg" alt=""/>
                         <img src="./banner02.jpg" alt=""/>
                         <img src="./banner03.jpg" alt=""/>
+                        <img src="./banner04.jpg" alt=""/>
                     </div>
                 </div>
                 <div class="banner__content">
@@ -187,91 +193,136 @@
     </header>
     <section class="metallorum row no-gutters justify-content-center">
         <div class="col-xs-12 col-md-9">
-            <div class="principalnews row">
-                <div class="col-md-4">
-                    <div class="principalnews__item">
-                        <img src="./Image.png" alt="" class="principalnews__item__image">
-                        <div class="principalnews__item__title">
-                            <span>Titulo de Noticia</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="principalnews__item">
-                        <img src="./Image.png" alt="" class="principalnews__item__image">
-                        <div class="principalnews__item__title">
-                            <span>Titulo de Noticia</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="principalnews__item">
-                        <img src="./Image.png" alt="" class="principalnews__item__image">
-                        <div class="principalnews__item__title">
-                            <span>Titulo de Noticia</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-around">
-                <div class="twitter col-md-3">
-                    <h3>Twitter</h3>
-                    <a class="twitter-timeline"  href="https://twitter.com/search?q=from%3A%40mashable%20OR%20from%3A%40newegg" data-height="600px" data-theme="dark" data-widget-id="991718003787096065">Tweets sobre from:@mashable OR from:@newegg</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                </div>
-                <div class="col-md-3">
-                    <h3>Noticias</h3>
-                    <div class="othernews">
-                        <div class="othernews__item row no-gutters">
-                            <div class="col-sm-4">
-                                <div class="othernews__item__picture">
-                                    <img src="./Image.png" alt="" class="othernews__item__picture__image">
+            <div class="container-fluid">
+                <div class="principalnews row">
+                    <div class="mt-2 mt-md-0 col-md-4">
+                        <a href="https://www.coindesk.com/information/how-bitcoin-mining-works/">
+                            <div class="principalnews__item">
+                                <img src="./noticias1.jpg" alt="" class="principalnews__item__image">
+                                <div class="principalnews__item__title">
+                                    <h5>Titulo de Noticia</h5>
+                                    <p>Descripción de noticia</p>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
-                                <h4 class="othernews__item__title">
-                                    Otra Noticia
-                                </h4>
-                                <p class="othernews__item__description">
-                                    Descripción breve de la noticia
-                                </p>
-                            </div>
-                        </div>
-                        <div class="othernews__item row no-gutters">
-                            <div class="col-sm-4">
-                                <div class="othernews__item__picture">
-                                    <img src="./Image.png" alt="" class="othernews__item__picture__image">
+                        </a>
+                    </div>
+                    <div class="mt-2 mt-md-0 col-md-4">
+                        <a href="">
+                            <div class="principalnews__item">
+                                <img src="./noticias2.jpg" alt="" class="principalnews__item__image">
+                                <div class="principalnews__item__title">
+                                    <h5>Titulo de Noticia</h5>
+                                    <p>Descripción de noticia</p>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
-                                <h4 class="othernews__item__title">
-                                    Otra Noticia
-                                </h4>
-                                <p class="othernews__item__description">
-                                    Descripción breve de la noticia
-                                </p>
-                            </div>
-                        </div>
-                        <div class="othernews__item row no-gutters">
-                            <div class="col-sm-4">
-                                <div class="othernews__item__picture">
-                                    <img src="./Image.png" alt="" class="othernews__item__picture__image">
+                        </a>
+                    </div>
+                    <div class="mt-2 mt-md-0 col-md-4">
+                        <a href="">
+                            <div class="principalnews__item">
+                                <img src="./noticias3.jpg" alt="" class="principalnews__item__image">
+                                <div class="principalnews__item__title">
+                                    <h5>Titulo de Noticia</h5>
+                                    <p>Descripción de noticia</p>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
-                                <h4 class="othernews__item__title">
-                                    Otra Noticia
-                                </h4>
-                                <p class="othernews__item__description">
-                                    Descripción breve de la noticia
-                                </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="twitter mt-2 mt-md-0 col-xs-12 col-md-3">
+                        <h3>Twitter</h3>
+                        <div class="text-center">
+                            <a class="twitter-timeline"  href="https://twitter.com/search?q=from%3A%40mashable%20OR%20from%3A%40newegg" data-chrome="nofooter,noheader" data-height="600px" data-theme="dark" data-widget-id="991718003787096065">Tweets sobre from:@mashable OR from:@newegg</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                    </div>
+                    <div class="mt-2 mt-md-0 col-xs-12 col-md-3">
+                        <h3>Noticias</h3>
+                        <div class="othernews">
+                            <div class="othernews__item row no-gutters">
+                                <div class="col-sm-4">
+                                    <div class="othernews__item__picture">
+                                        <img src="./noticias4.jpg" alt="" class="othernews__item__picture__image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h4 class="othernews__item__title">
+                                        Otra Noticia
+                                    </h4>
+                                    <p class="othernews__item__description">
+                                        Descripción breve de la noticia
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="othernews__item row no-gutters">
+                                <div class="col-sm-4">
+                                    <div class="othernews__item__picture">
+                                        <img src="./noticias5.jpg" alt="" class="othernews__item__picture__image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h4 class="othernews__item__title">
+                                        Otra Noticia
+                                    </h4>
+                                    <p class="othernews__item__description">
+                                        Descripción breve de la noticia
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="othernews__item row no-gutters">
+                                <div class="col-sm-4">
+                                    <div class="othernews__item__picture">
+                                        <img src="./noticias6.png" alt="" class="othernews__item__picture__image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h4 class="othernews__item__title">
+                                        Otra Noticia
+                                    </h4>
+                                    <p class="othernews__item__description">
+                                        Descripción breve de la noticia
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="othernews__item row no-gutters">
+                                <div class="col-sm-4">
+                                    <div class="othernews__item__picture">
+                                        <img src="./noticias7.JPG" alt="" class="othernews__item__picture__image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h4 class="othernews__item__title">
+                                        Otra Noticia
+                                    </h4>
+                                    <p class="othernews__item__description">
+                                        Descripción breve de la noticia
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="othernews__item row no-gutters">
+                                <div class="col-sm-4">
+                                    <div class="othernews__item__picture">
+                                        <img src="./noticias8.jpg" alt="" class="othernews__item__picture__image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h4 class="othernews__item__title">
+                                        Otra Noticia
+                                    </h4>
+                                    <p class="othernews__item__description">
+                                        Descripción breve de la noticia
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <h3>Indicadores</h3>
-                    <script type="text/javascript" src="https://www.goldpriceoz.com/goldwidget.php?m=000000&g=FFFFFF&c=717375&i=FFFFFF&l=DDDDDD&o=ECEAEA&w=255"></script>
+                    <div class="mt-2 mt-md-0 col-xs-12 col-md-3">
+                        <h3>Indicadores</h3>
+                        <div class="text-center">
+                            <script type="text/javascript" src="https://www.goldpriceoz.com/goldwidget.php?m=000000&g=FFFFFF&c=717375&i=FFFFFF&l=DDDDDD&o=ECEAEA&w=255"></script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
