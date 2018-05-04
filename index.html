@@ -126,19 +126,29 @@
         width: 100%;
     }
     .metallorum__footer {
-        background-color: #393d42
+        background-color: #393d42;
+        position: relative;
+    }
+    .metallorum__footer__banner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+    .metallorum__footer__banner img {
+        width: 100%;
     }
     .metallorum__footer__sections {
         align-items: center;
-    }
-    .logo__img, .mapa__img {
-        width: 100%;
+        position: relative;
+        z-index: 10;
+        background-color: rgba(20, 20, 20, 0.5)
     }
     .logo__img {
-        max-width: 296px;
-    }
-    .mapa__img {
-        max-width: 349px;
+        max-width: 100%;
     }
     .metallorum__footer__links > a {
         background-color: transparent;
@@ -379,25 +389,22 @@
             </div>
         </div>
     </section>
-    <footer class="metallorum__footer py-3">
+    <footer class="metallorum__footer py-3 mt-3">
+        <div class="metallorum__footer__banner">
+            <img src="./banner04.jpg" alt="" class="metallorum__footer__banner__image">
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="text-center col-12">
-                    <ul class="metallorum__footer__sections nav nav-fill">
-                        <li class="nav-item">
-                            <img src="./logo.png" alt="" class="logo__img">
-                        </li>
-                        <li class="nav-item">
-                                <img src="./mapa.png" alt="" class="mapa__img">
-                        </li>
-                        <li class="nav-item">
-                            <div class="metallorum__footer__links list-group list-group-flush text-left">
-                                <a href="" class="list-group-item list-group-item-action">CONTACTO</a>
-                                <a href="" class="list-group-item list-group-item-action">FAQ'S</a>
-                                <a href="" class="list-group-item list-group-item-action">AVISO DE PRIVACIDAD</a>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="row metallorum__footer__sections">
+                <div class="text-center col-12 col-md-4">
+                    <img src="./logo.png" alt="" class="logo__img">
+                </div>
+                <div class="text-center col-12 col-md-4"></div>
+                <div class="text-center col-12 col-md-4">
+                    <div class="metallorum__footer__links list-group list-group-flush text-center text-md-left">
+                        <a href="" class="list-group-item list-group-item-action">CONTACTO</a>
+                        <a href="" class="list-group-item list-group-item-action">FAQ'S</a>
+                        <a href="" class="list-group-item list-group-item-action">AVISO DE PRIVACIDAD</a>
+                    </div>
                 </div>
             </div>
         </div>
