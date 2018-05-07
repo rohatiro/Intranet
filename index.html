@@ -177,6 +177,9 @@
     .helpdeskalert.fade:not(.show) {
         display: none;
     }
+    .org__image {
+        width: 100%;
+    }
     @media (min-width: 768px) {
         .helpdeskalert {
             left: inherit;
@@ -245,7 +248,7 @@
                                             <a class="nav-link" href="#projects" id="projects-tab" data-toggle="tab" aria-controls="projects">Proyectos</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="">Link 3</a>
+                                            <a class="nav-link" href="#org" id="org-tab" data-toggle="tab" aria-controls="org">Organigrama</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="">Link 4</a>
@@ -425,6 +428,13 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane container-fluid" id="org" role="tabpanel" aria-labelledby="org-tab">
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <img src="./org.jpg" alt="" class="org__image">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <footer class="metallorum__footer py-3 mt-3">
@@ -464,9 +474,21 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="problem" class="col-form-label">Problema</label>
-                            <textarea class="form-control" id="problem" cols="30" rows="10"></textarea>
-                        </div>  
+                            <label for="system" class="col-form-label">Sistema</label>
+                            <input type="text" class="form-control" id="system">
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-form-label">Modulo</label>
+                            <select class="form-control" id="module">
+                                <option value="0">Sistema 1</option>
+                                <option value="1">Sistema 2</option>
+                                <option value="2">Sistema 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="problem" class="col-form-label">Problematica</label>
+                            <textarea class="form-control" id="problem" cols="30" rows="7"></textarea>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
