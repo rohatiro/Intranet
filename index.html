@@ -163,6 +163,26 @@
         font-size: 1em;
         font-weight: bold;
     }
+    .projectimage {
+        width: 100%;
+    }
+    .helpdeskalert {
+        /* /display: none; */
+        position: fixed;
+        top: 1vh;
+        right: 1vw;
+        left: 1vw;
+        z-index: 9999;
+    }
+    .helpdeskalert.fade:not(.show) {
+        display: none;
+    }
+    @media (min-width: 768px) {
+        .helpdeskalert {
+            left: inherit;
+            width: 30vw;
+        }
+    }
     </style>
 </head>
 <body>
@@ -217,12 +237,12 @@
                         <div class="col-8">
                             <div class="row no-gutters">
                                 <div class="col-12">
-                                    <ul class="site-nav nav nav-pills nav-fill">
+                                    <ul class="site-nav nav nav-pills nav-fill" id="intranetTab" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="">Link 1</a>
+                                            <a class="nav-link active" href="#home" id="home-tab" data-toggle="tab" aria-controls="home" aria-selected="true">Inicio</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="">Link 2</a>
+                                            <a class="nav-link" href="#projects" id="projects-tab" data-toggle="tab" aria-controls="projects">Proyectos</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="">Link 3</a>
@@ -231,7 +251,7 @@
                                             <a class="nav-link" href="">Link 4</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="">Link 5</a>
+                                            <a class="nav-link" id="helpdeskdialog" data-toggle="modal" data-target="#helpdeskmodal" href="">Help Desk</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -254,8 +274,8 @@
         </div>
     </header>
     <section class="metallorum row no-gutters justify-content-center">
-        <div class="col-xs-12 col-md-11 col-lg-9">
-            <div class="container-fluid">
+        <div class="tab-content col-xs-12 col-md-11 col-lg-9">
+            <div class="tab-pane active show container-fluid" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="principalnews row">
                     <div class="mt-2 mt-md-0 col-md-4">
                         <a href="https://www.coindesk.com/information/how-bitcoin-mining-works/">
@@ -387,6 +407,24 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane container-fluid" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs" id="ProjectsTabs" role="tablist">
+                            <li class="nav-item"><a href="#project1" class="nav-link active" data-toggle="tab" id="project-tab1" role="tab" aria-controls="project1">Proyecto 1</a></li>
+                            <li class="nav-item"><a href="#project2" class="nav-link" data-toggle="tab" id="project-tab2" role="tab" aria-controls="project2">Proyecto 2</a></li>
+                            <li class="nav-item"><a href="#project3" class="nav-link" data-toggle="tab" id="project-tab3" role="tab" aria-controls="project3">Proyecto 3</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="project1" role="tabpanel" aria-labelledby="project-tab1">
+                                <img src="./projectimg.png" alt="" class="projectimage">
+                            </div>
+                            <div class="tab-pane" id="project2" role="tabpanel" aria-labelledby="project-tab2">Hola Mundo este es el Proyecto 2</div>
+                            <div class="tab-pane" id="project3" role="tabpanel" aria-labelledby="project-tab3">Hola Mundo este es el Proyecto 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <footer class="metallorum__footer py-3 mt-3">
@@ -414,12 +452,53 @@
             <span class="metallorum__afterfooter__text">TODOS LOS DERECHOS RESERVADOS METALLŌRUM HOLDING, S.A.P.I. de C.V. ® 2018</span>
         </div>
     </div>
+    <div class="modal" id="helpdeskmodal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Help Desk</h5>
+                    <button class="close" type="button" data-dismiss="modal" arial-Label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="problem" class="col-form-label">Problema</label>
+                            <textarea class="form-control" id="problem" cols="30" rows="10"></textarea>
+                        </div>  
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="helpdesk__send">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="helpdesk__success" class="helpdeskalert alert alert-success fade">
+        <a href="#" class="close" aria-label="close">&times;</a>
+        <strong>La solicitud fue enviada con exito</strong>
+    </div>
     <script src="./jquery.nivo.slider.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function() {
             $('#slider').nivoSlider({
                 directionNav: false,
                 effect:"sliceDownRight"
+            });
+
+            $("#helpdesk__send").on("click", function(e) {
+                e.preventDefault();
+                $("#helpdeskmodal").modal("hide");
+                $("#helpdesk__success").addClass("show");
+                setTimeout(function(){
+                    $("#helpdesk__success").removeClass("show");
+                }, 5000);
+            });
+
+            $("#helpdesk__success").on("click", ".close", function(e) {
+                $("#helpdesk__success").removeClass("show");
             });
         });
     </script> 
