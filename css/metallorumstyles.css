@@ -109,18 +109,32 @@
     margin: 1em 0;
 }
 
-.principalnews__item {
+.principalnews .dfwp-list {
+    float: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.principalnews__item, .principalnews .dfwp-list .dfwp-item{
     width: 100%;
     margin: 0 auto;
     position: relative;
     min-height: 300px;
 }
 
-.principalnews__item__image {
+.principalnews .dfwp-list .item {
+    padding: 0;
+    position: relative;
+}
+
+.principalnews__item__image,
+.principalnews .dfwp-list .image-area-top img {
     width: 100%;
 }
 
-.principalnews__item__title {
+.principalnews__item__title,
+.principalnews .dfwp-list .link-item {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -129,6 +143,11 @@
     color: white;
     padding: 1em;
     min-height: 43%;
+}
+
+.principalnews .dfwp-list .link-item a {
+    color: white;
+    text-decoration: none;
 }
 
 .carousel {
@@ -266,8 +285,16 @@
     color: #ffc63a;
 }
 
+.metallorum__news__body {
+    margin-top: 1em;
+}
+
 .metallorum__body__content {
     overflow-x: auto;
+}
+
+.metallorum__news__body .metallorum__body__options {
+    padding: 0 0.5em;
 }
 
 .metallorum__relatednews .dfwp-list {
@@ -332,18 +359,27 @@
 
     .metallorum__relatednews .dfwp-list {
         flex-flow: row wrap;
-        justify-content: space-between;
     }
 
     .metallorum__relatednews .dfwp-item {
-        max-width: 35%;
-        margin: 0 5%;
+        max-width: 50%;
+        flex: 1 1 50%;
     }
 }
 
 @media (min-width: 768px) {
     .metallorum__topnav .ms-core-listMenu-root {
         flex-direction: row;
+    }
+
+    .principalnews .dfwp-list {
+        flex-direction: row;
+    }
+
+    .principalnews .dfwp-list .dfwp-item{
+        margin: 0 1%;
+        flex: 1 1 33.33333%;
+        max-width: 33.33333%;
     }
 
     .helpdeskalert {
@@ -360,8 +396,8 @@
     }
     
     .metallorum__relatednews .dfwp-item {
-        max-width: 30%;
-        margin: 0 1%;
+        max-width: 33.33333%;
+        flex: 1 1 33.33333%;
     }
     
     .metallorum__relatednews .dfwp-item .link-item > a {
