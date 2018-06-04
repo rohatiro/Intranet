@@ -29,6 +29,18 @@
     opacity: 1;
 }
 
+.metallorum__topnav .ms-core-listMenu-root > li:first-child .menu-item .menu-item-text {
+    font-size: 0;
+    font-family: Font Awesome\ 5 Free;
+    display: inline-block;
+    font-weight: 900;
+}
+
+.metallorum__topnav .ms-core-listMenu-root > li:first-child .menu-item .menu-item-text:before {
+    content: "\f015";
+    font-size: 2rem;
+}
+
 .global-nav {
     background-color: #393d42;
 }
@@ -51,6 +63,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    align-items: center;
 }
 
 .metallorum__topnav .ms-core-listMenu-root > li {
@@ -72,8 +85,13 @@
     background-color: white;
 }
 
+.metallorum__header .ms-listMenu-editLink {
+    display: none;
+}
+
 .banner {
     position: relative;
+    margin-bottom: 1em;
 }
 
 .banner__bgslider {
@@ -82,13 +100,13 @@
     overflow: hidden;
 }
 
-.banner__content {
+/* .banner__content {
     position: absolute;
     top: 5%;
     left: 0;
     right: 0;
     z-index: 10;
-}
+} */
 
 .banner__logo {
     display: inline-block;
@@ -103,10 +121,39 @@
     color: black;
     margin-top: 1em;
     border-radius: 5px;
+    position: relative;
+    border: 1px solid #aaa;
+}
+
+.site-nav > .nav-item > .nav-link{
+    font-weight: bold;
+}
+
+.site-nav__menu {
+    background-color: white;
+    float: none;
+    width: 98%;
+    font-size: 0.8em;
+    border: 1px solid #aaa;
+    margin: 0 1%;
+}
+
+.site-nav__menu.show {
+    display: flex;
+}
+
+.metallorum .ms-webpart-titleText {
+    font-size: 1.5em;
+    color: #777;
+    line-height: 1.6;
+}
+
+.ms-webpart-zone h3 {
+    font-size: 1.15em;
 }
 
 .principalnews {
-    margin: 1em 0;
+    margin-bottom: 1em;
 }
 
 .principalnews .dfwp-list {
@@ -202,6 +249,10 @@
     align-items: center;
 }
 
+.metallorum__footer__banner video {
+    width: 100%;
+}
+
 .metallorum__footer__banner img {
     width: 100%;
 }
@@ -211,6 +262,10 @@
     position: relative;
     z-index: 10;
     background-color: rgba(20, 20, 20, 0.5)
+}
+
+.metallorum__footer__sections .card {
+    font-size: 0.85em;
 }
 
 .logo__img {
@@ -229,7 +284,7 @@
 }
 
 .metallorum__afterfooter__text {
-    font-size: 1em;
+    font-size: 0.5em;
     font-weight: bold;
 }
 
@@ -378,8 +433,8 @@
 
     .principalnews .dfwp-list .dfwp-item{
         margin: 0 1%;
-        flex: 1 1 33.33333%;
-        max-width: 33.33333%;
+        flex: 1 1 31.33333%;
+        max-width: 31.33333%;
     }
 
     .helpdeskalert {
@@ -406,11 +461,35 @@
 }
 
 @media (min-width:992px) {
+    .banner__content {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
     .metallorum__news__header__title {
         margin-left: 1%;
     }
     
     .metallorum__relatednews .dfwp-item {
         max-width: 22%;
+    }
+    
+    .site-nav__menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .site-nav__menu > li {
+        border-right: 1px solid #aaa;
+    }
+    
+    .site-nav__menu > li:last-child {
+        border-right: 0px;
     }
 }
