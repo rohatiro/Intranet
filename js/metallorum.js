@@ -1,3 +1,22 @@
+function openDialog(pageUrl, title, callback) {
+    var options = {
+        url: pageUrl,
+        title: title,
+        allowMaximize: false,
+        showClose: true,
+        width: 500,
+        height: 500,
+        dialogReturnValueCallback: callback,
+    };
+    SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+}
+
+function helpDeskCallback(result) {
+    if (result == SP.UI.DialogResult.OK) {
+        alert("Su solicitud fue enviada. Se le mandara un correo de confirmaci\u00F3n");
+    }
+}
+
 $(function() {
     $('#slider').nivoSlider({
         directionNav: false,
